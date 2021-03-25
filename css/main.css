@@ -1,0 +1,109 @@
+div {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#title {
+    margin-bottom: 150px;
+}
+
+#progress-bar-wrapper,
+#progress-bar {
+    height: 24px;
+}
+
+#progress-bar-wrapper {
+    margin-top: 250px;
+    height: 24px;
+    background-color: lightgrey;
+    width: 70%;
+}
+
+#progress-bar {
+    width: 0%;
+    margin-left: 0;
+    background-color: rgb(0 0 255);
+}
+
+#number-wrapper {
+    position: absolute;
+}
+
+h1 {
+    font-family: 'Train One', cursive;
+    font-weight: normal;
+    font-size: 3.5vw;
+}
+
+#number {
+    font-family: 'Arvo', serif;
+    font-size: 48px;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+p {
+    font-family: 'Arvo', serif;
+}
+
+button {
+    padding: 0.9rem;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(89, 177, 148);
+    min-width: 12rem;
+    letter-spacing: 1px;
+    font-family: 'Arvo', serif;
+    font-size: x-large;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (min-width: 688px) {
+    #controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 70%;
+        margin: auto;
+    }
+    #progress-bar-wrapper,
+    #progress-bar {
+        height: 36px;
+    }
+}
+
+@media only screen and (min-width: 1108px) {
+    #controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 50%;
+        margin: auto;
+    }
+    #progress-bar-wrapper {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1408px) {
+    #controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 40%;
+        margin: auto;
+    }
+    #progress-bar-wrapper {
+        width: 40%;
+    }
+}

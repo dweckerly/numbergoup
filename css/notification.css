@@ -1,0 +1,9 @@
+#notification {
+    height: 24px;
+    width: auto;
+    background-color: lightgrey;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: none;
+}
