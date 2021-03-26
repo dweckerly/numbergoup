@@ -43,7 +43,7 @@ function updateProgress() {
     delete progressInterval;
     if (rate > 75) {
         progressActive = false;
-        progressBarWrapperEle.classList.add("spin");
+        progressBarDivEle.classList.add("spin");
         progressBarWrapperEle.classList.add("turn-black");
     } else {
         progressInterval = setInterval(progressIncrement, ((1000 / rate) / progressRate));
@@ -100,7 +100,17 @@ function loop() {
         if (progressActive) {
             updateProgress()
         }
-        if (amount < 151) {
+        if (((amount > 150 && rate > 75) || number > 5000000) && !titleFade) {
+            titleFade = true;
+            titleEle.classList.add("fade-out-0")
+            progressBarSectionEle.classList.add("fade-out-1")
+            controlsEle.classList.add("fade-out-2");
+            body.classList.add("turn-red");
+            setTimeout(function() {
+                rateBtn.disabled = true;
+                amountBtn.disabled = true;
+            }, 25000)
+        } else {
             changeNumberSize();
         }
         window.setTimeout(loop, (1000 / rate));

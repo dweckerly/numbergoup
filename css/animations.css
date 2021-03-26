@@ -1,11 +1,24 @@
-.fadeOutSlow {
+.fade-out-0 {
     animation-name: fadeOut;
     animation-duration: 20s;
+    animation-fill-mode: forwards;
+}
+
+.fade-out-1 {
+    animation-name: fadeOut;
+    animation-duration: 25s;
+    animation-fill-mode: forwards;
+}
+
+.fade-out-2 {
+    animation-name: fadeOut;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
 }
 
 .spin {
     animation-name: spin;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -13,22 +26,20 @@
 .turn-black {
     animation-name: turn-black;
     animation-duration: 8s;
+    animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.turn-red {
+    animation-name: turn-red;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
-    0% {
+    from {
         opacity: 1;
     }
-    100% {
+    to {
         opacity: 0;
     }
 }
@@ -48,5 +59,14 @@
     }
     to {
         background-color: black;
+    }
+}
+
+@keyframes turn-red {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: red;
     }
 }

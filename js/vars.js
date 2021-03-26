@@ -13,9 +13,11 @@ var redVal = 0;
 var greenVal = 255;
 var blueVal = 255;
 
-var progressActive = true;
+var progressActive = true,
+    titleFade = false;
 
-const numberEle = document.getElementById("number"),
+const body = document.getElementsByTagName("BODY")[0],
+    numberEle = document.getElementById("number"),
     rateEle = document.getElementById("rate"),
     amountEle = document.getElementById("amount"),
     rateCostEle = document.getElementById("rate-cost"),
@@ -24,7 +26,11 @@ const numberEle = document.getElementById("number"),
     amountBtn = document.getElementById("amount-btn"),
     progressBarEle = document.getElementById("progress-bar"),
     progressBarWrapperEle = document.getElementById("progress-bar-wrapper"),
-    notificationEle = document.getElementById("notification");
+    progressBarDivEle = document.getElementById("progress-bar-div"),
+    progressBarSectionEle = document.getElementById("progress-bar-section"),
+    notificationEle = document.getElementById("notification"),
+    controlsEle = document.getElementById("controls"),
+    titleEle = document.getElementById("title");
 
 const INCREMENT = 0.1;
 
