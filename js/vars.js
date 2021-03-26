@@ -10,6 +10,7 @@ var progressInc = 0.1;
 var progressRate = 1000;
 
 var redVal = 0;
+var greenVal = 255;
 var blueVal = 255;
 
 const numberEle = document.getElementById("number"),

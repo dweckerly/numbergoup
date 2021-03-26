@@ -4,17 +4,12 @@ div {
     text-align: center;
 }
 
-#title {
-    margin-bottom: 150px;
-}
-
 #progress-bar-wrapper,
 #progress-bar {
     height: 24px;
 }
 
 #progress-bar-wrapper {
-    margin-top: 250px;
     height: 24px;
     background-color: lightgrey;
     width: 70%;
@@ -23,11 +18,7 @@ div {
 #progress-bar {
     width: 0%;
     margin-left: 0;
-    background-color: rgb(0 0 255);
-}
-
-#number-wrapper {
-    position: absolute;
+    background-color: rgb(0 255 255);
 }
 
 h1 {
@@ -52,6 +43,7 @@ button {
     color: #fff;
     border: none;
     border-radius: 20px;
+    cursor: pointer;
     background-color: rgb(89, 177, 148);
     min-width: 12rem;
     letter-spacing: 1px;

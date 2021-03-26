@@ -55,19 +55,35 @@ function progressRateUpdate() {
 }
 
 function changeUI() {
-    let changeAmt = ((amount - 0.1) * 10);
+    changeNumberSize();
+    changeProgressBarColor();
+}
+
+function changeNumberSize() {
+    if (amount % 1 === 0) {
+        let changeAmt = ((amount - 0.1) * 10);
+        numberEle.style.fontSize = `${INITIAL_TEXT_SIZE + changeAmt}px`
+        numberEle.style.marginTop = `-${changeAmt / 2}px`
+    }
+}
+
+function changeProgressBarColor() {
     let changeRate = rate * 10;
-    numberEle.style.fontSize = `${INITIAL_TEXT_SIZE + changeAmt}px`
-    numberEle.style.marginTop = `-${changeAmt}px`
-    let newRed = (redVal + changeRate);
-    let newBlue = (blueVal - changeRate);
-    if (newRed > 255) {
-        newRed = 255;
+    if (changeRate < 255) {
+        let newRed = changeRate;
+        let newBlue = (blueVal - (2 * changeRate));
+        let newGreen = (greenVal - changeRate)
+        if (newRed > 255) {
+            newRed = 255;
+        }
+        if (newGreen < 0) {
+            newGreen == 0;
+        }
+        if (newBlue < 0) {
+            newBlue == 0;
+        }
+        progressBarEle.style.backgroundColor = 'rgb(' + newRed + ', ' + newGreen + ',' + newBlue + ')';
     }
-    if (newBlue < 0) {
-        newBlue == 0;
-    }
-    progressBarEle.style.backgroundColor = 'rgb(' + newRed + ', 0,' + newBlue + ')';
 }
 
 function loop() {
