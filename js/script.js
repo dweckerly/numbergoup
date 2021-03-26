@@ -39,9 +39,15 @@ function updateProgress() {
     changeUI();
     progress = 0;
     progressBarEle.style.width = "0%";
-    clearTimeout(progressInterval);
+    clearInterval(progressInterval);
     delete progressInterval;
-    progressInterval = setInterval(progressIncrement, ((1000 / rate) / progressRate));
+    if (rate > 75) {
+        progressActive = false;
+        progressBarWrapperEle.classList.add("spin");
+        progressBarWrapperEle.classList.add("turn-black");
+    } else {
+        progressInterval = setInterval(progressIncrement, ((1000 / rate) / progressRate));
+    }
 }
 
 function progressRateUpdate() {
@@ -61,9 +67,10 @@ function changeUI() {
 
 function changeNumberSize() {
     if (amount % 1 === 0) {
-        let changeAmt = ((amount - 0.1) * 10);
-        numberEle.style.fontSize = `${INITIAL_TEXT_SIZE + changeAmt}px`
-        numberEle.style.marginTop = `-${changeAmt / 2}px`
+        numberEle.style.fontSize = `${INITIAL_TEXT_SIZE + amount}px`;
+    }
+    if (amount % 2 == 0) {
+        numberEle.style.marginTop = `-${amount / 2}px`;
     }
 }
 
@@ -90,7 +97,12 @@ function loop() {
     if (rate !== 0) {
         number += amount;
         update();
-        updateProgress()
+        if (progressActive) {
+            updateProgress()
+        }
+        if (amount < 151) {
+            changeNumberSize();
+        }
         window.setTimeout(loop, (1000 / rate));
     } else {
         window.setTimeout(loop, (100));

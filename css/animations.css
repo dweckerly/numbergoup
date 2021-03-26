@@ -1,0 +1,52 @@
+.fadeOutSlow {
+    animation-name: fadeOut;
+    animation-duration: 20s;
+}
+
+.spin {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.turn-black {
+    animation-name: turn-black;
+    animation-duration: 8s;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn-black {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: black;
+    }
+}

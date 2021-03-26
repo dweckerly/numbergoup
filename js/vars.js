@@ -13,6 +13,8 @@ var redVal = 0;
 var greenVal = 255;
 var blueVal = 255;
 
+var progressActive = true;
+
 const numberEle = document.getElementById("number"),
     rateEle = document.getElementById("rate"),
     amountEle = document.getElementById("amount"),
@@ -21,6 +23,7 @@ const numberEle = document.getElementById("number"),
     rateBtn = document.getElementById("rate-btn"),
     amountBtn = document.getElementById("amount-btn"),
     progressBarEle = document.getElementById("progress-bar"),
+    progressBarWrapperEle = document.getElementById("progress-bar-wrapper"),
     notificationEle = document.getElementById("notification");
 
 const INCREMENT = 0.1;
