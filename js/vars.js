@@ -13,8 +13,15 @@ var redVal = 0;
 var greenVal = 255;
 var blueVal = 255;
 
+// UI/animation flags
 var progressActive = true,
-    titleFade = false;
+    titleFade = false,
+    controlsEnabled = true,
+    gameLoop = true;
+
+// ending flags
+var bigNumber = false,
+    tooFast = false;
 
 const body = document.getElementsByTagName("BODY")[0],
     numberEle = document.getElementById("number"),

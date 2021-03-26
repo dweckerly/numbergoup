@@ -20,18 +20,35 @@
     loop();
 })();
 
-function update() {
+function updateNumber() {
     number = round(number);
     numberEle.innerText = number;
+}
+
+function updateRate() {
     rate = round(rate);
-    amount = round(amount);
     rateCost = round(rate * 2);
-    amountCost = round(amount * 2);
     rateEle.innerText = rate;
-    amountEle.innerText = amount;
     rateCostEle.innerText = rateCost;
+}
+
+function updateAmount() {
+    amount = round(amount);
+    amountCost = round(amount * 2);
+    amountEle.innerText = amount;
     amountCostEle.innerText = amountCost;
-    checkBtns();
+}
+
+function update() {
+    updateNumber();
+    if (controlsEnabled) {
+        updateAmount();
+        updateProgress();
+        checkBtns();
+    }
+    if (progressActive) {
+        updateProgress()
+    }
 }
 
 function updateProgress() {
@@ -97,9 +114,7 @@ function loop() {
     if (rate !== 0) {
         number += amount;
         update();
-        if (progressActive) {
-            updateProgress()
-        }
+
         if (((amount > 150 && rate > 75) || number > 5000000) && !titleFade) {
             titleFade = true;
             titleEle.classList.add("fade-out-0")
@@ -107,13 +122,18 @@ function loop() {
             controlsEle.classList.add("fade-out-2");
             body.classList.add("turn-red");
             setTimeout(function() {
+                controlsEnabled = false;
                 rateBtn.disabled = true;
                 amountBtn.disabled = true;
             }, 25000)
+            setTimeout(function() {
+                gameLoop = false;
+            }, 60000)
         } else {
             changeNumberSize();
         }
-        window.setTimeout(loop, (1000 / rate));
+        if (gameLoop)
+            window.setTimeout(loop, (1000 / rate));
     } else {
         window.setTimeout(loop, (100));
     }
