@@ -43,6 +43,7 @@ function update() {
     updateNumber();
     if (controlsEnabled) {
         updateAmount();
+        updateRate();
         updateProgress();
         checkBtns();
     }
