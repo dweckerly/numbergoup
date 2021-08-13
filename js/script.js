@@ -130,6 +130,9 @@ function loop() {
             setTimeout(function() {
                 gameLoop = false;
             }, 60000)
+            setTimeout(function() {
+                endText();
+            }, 63000)
         } else {
             changeNumberSize();
         }
@@ -152,4 +155,13 @@ function checkBtns() {
 
 function round(value) {
     return Math.round(value * 10) / 10;
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function endText() {
+    fortuneText.innerHTML = fortunes[getRandomInt(fortunes.length)];
+    fortuneDiv.classList.add("fade-in");
 }

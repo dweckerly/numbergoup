@@ -37,7 +37,9 @@ const body = document.getElementsByTagName("BODY")[0],
     progressBarSectionEle = document.getElementById("progress-bar-section"),
     notificationEle = document.getElementById("notification"),
     controlsEle = document.getElementById("controls"),
-    titleEle = document.getElementById("title");
+    titleEle = document.getElementById("title"),
+    fortuneDiv = document.getElementById("fortune"),
+    fortuneText = document.getElementById("fortune-text");
 
 const INCREMENT = 0.1;
 
@@ -45,4 +47,15 @@ const INITIAL_TEXT_SIZE = 48;
 
 const messages = [
     "Click the buttons to get started! " + String.fromCodePoint(0x1F354)
+]
+
+const fortunes = [
+    "Your current troubles will fade when you pass through the yellow glass.",
+    "When three wings cross your hidden desire will be fufilled.",
+    "The key to your future potential lies in the mouth of a serpent.",
+    "You will have good fortune when the clouds swell at dusk.",
+    "Be wary of a falling knife at a coming negotiation.",
+    "Crisis may be brought upon you by an unplanned celebration.",
+    "A meager gift will soon come from your secret enemy.",
+    "A fruitful opportunity is waiting for you where the rocks bend and the water is still."
 ]
